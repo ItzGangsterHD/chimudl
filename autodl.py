@@ -32,9 +32,9 @@ def check():
     global s
     if s != paste():
         s = paste()
-        if s.startswith('https://osu.ppy.sh/beatmapsets/'):
+        if s.startswith('https://osu.ppy.sh/beatmapset'):
             main(getid(s))
-        if s.startswith('https://osu.ppy.sh/b/'):
+        if s.startswith('https://osu.ppy.sh/b/') or s.startswith('https://osu.ppy.sh/beatmaps'):
             resp = requests.Session().head(s, allow_redirects=True)
             main(getid(resp.url))
 
